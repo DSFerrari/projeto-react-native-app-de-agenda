@@ -9,7 +9,7 @@ export function Home(){
 
   function handleParticipantAdd(){
     if(participants.includes(participantName)){
-    return  Alert.alert('Participante existe","Partipante já inscrito');
+    return  Alert.alert('Participante existe , Partipante já inscrito');
     };
     setParticipants(prevState => [...prevState, participantName]);
     setParticipantName('');
@@ -19,7 +19,7 @@ export function Home(){
     Alert.alert('Remover', `Remover participante ${name}?`,[
       {
         text: 'Sim',
-        onPress:() => Alert.alert("Deletado!")
+        onPress:() => setParticipants(prevState => prevState.filter(participant => participant !== name)),
       },
       {
         text: 'Não',
