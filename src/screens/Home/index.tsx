@@ -11,6 +11,9 @@ export function Home(){
     if(participants.includes(participantName)){
     return  Alert.alert('Participante existe , Partipante já inscrito');
     };
+    if(participantName==""){
+    return Alert.alert('Nome invalido');
+    }
     setParticipants(prevState => [...prevState, participantName]);
     setParticipantName('');
   }
